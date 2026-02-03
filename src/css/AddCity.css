@@ -1,0 +1,153 @@
+/* O Container é quem manda no tamanho e posição agora */
+header {
+  width: 100%; /* Ocupa toda a largura da tela */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centraliza o conteúdo verticalmente */
+  background-color: rgba(2, 16, 54, 0.13);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.226);
+  gap: 3rem;
+}
+
+.input-container {
+  width: 90%; /* Ocupa 90% da largura do header */
+  position: relative;
+  display: flex;
+  padding: 30px;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box; /* Garante que o padding não estoure a tela */
+}
+
+/* O ícone fica "flutuando" por cima do input */
+.search-icon {
+  position: absolute;
+  left: 36.7rem; /* Distância da esquerda */
+  width: 30px; /* Tamanho do ícone */
+  height: 30px;
+  color: rgba(42, 42, 42, 0.64); /* Cor branca da lupa */
+  pointer-events: none; /* Para o clique passar através do ícone e focar no input */
+}
+
+.menu-icon {
+  width: 30px; /* Tamanho do ícone */
+  height: 30px;
+  color: rgb(255, 255, 255); /* Cor branca do menu */
+  cursor: pointer;
+}
+
+/* O input ocupa todo o espaço do container */
+div .input-add-city {
+  padding: 0.5rem 1rem 0.5rem 3rem; /* Espaçamento interno: top right bottom left */
+  width: 50%;
+  height: 4rem;
+  font-size: 1.5rem;
+  border: 1px solid #83828252;
+  border-radius: 8px; /* Opcional: deixa arredondado como na sua imagem de exemplo */
+  box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+  background-color: rgba(255, 255, 255, 0.527);
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .input-container {
+    width: 100%;
+  }
+  div .input-add-city {
+    padding: 0.5rem;
+    display: block;
+    width: 100%;
+    height: auto;
+    font-size: 1.5rem;
+  }
+  .menu-icon {
+    display: block;
+    margin-left: 1rem;
+  }
+
+  .search-icon {
+    display: none;
+  }
+}
+
+@media (min-width: 590px) and (max-width: 768px) {
+  div .input-add-city {
+    padding: 0.5rem;
+    display: block;
+    width: 100%;
+    height: auto;
+    font-size: 1.5rem;
+  }
+  .menu-icon {
+    display: block;
+    margin-left: 1rem;
+  }
+}
+
+@media (min-width: 470px) and (max-width: 589px) {
+  .input-container {
+    width: 100%;
+  }
+  .search-icon {
+    display: none;
+  }
+  .menu-icon {
+    display: block;
+    margin-left: 1rem;
+  }
+
+  div .input-add-city {
+    padding: 0.5rem;
+    display: block;
+    width: 100%;
+    height: auto;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 451px) and (max-width: 469px) {
+  .input-container {
+    width: 100%;
+    padding: 2rem;
+  }
+
+  .search-icon {
+    left: 20rem;
+    color: white;
+  }
+
+  .input-add-city {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+    margin-left: 1rem;
+  }
+}
+
+@media (max-width: 450px) {
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  header {
+    width: 100%;
+  }
+
+  .input-container {
+    width: 100%;
+  }
+  .search-icon {
+    left: 18rem;
+    color: white;
+  }
+  .menu-icon {
+    display: block;
+    margin-left: 1rem;
+  }
+  .input-add-city {
+    display: none;
+  }
+}
