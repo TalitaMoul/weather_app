@@ -128,16 +128,6 @@ h1 {
 }
 
 @media (min-width: 590px) and (max-width: 768px) {
-  html {
-    height: 100%;
-  }
-
-  body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    height: 100%;
-  }
 
   .column-flex {
     width: 100%;
@@ -210,7 +200,7 @@ h1 {
   }
 }
 
-@media (max-width: 450px) {
+@media (min-width: 0px) and (max-width: 450px) {
   html {
     height: 100%;
   }

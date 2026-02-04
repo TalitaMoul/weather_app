@@ -6,8 +6,6 @@ function AddCity() {
     <header>
       <Menu className="menu-icon"/>
       <div className="input-container">
-        
-        <Search className="search-icon" />
         <input
           className="input-add-city"
           type="text"

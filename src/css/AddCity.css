@@ -19,15 +19,6 @@ header {
   box-sizing: border-box; /* Garante que o padding não estoure a tela */
 }
 
-/* O ícone fica "flutuando" por cima do input */
-.search-icon {
-  position: absolute;
-  left: 36.7rem; /* Distância da esquerda */
-  width: 30px; /* Tamanho do ícone */
-  height: 30px;
-  color: rgba(42, 42, 42, 0.64); /* Cor branca da lupa */
-  pointer-events: none; /* Para o clique passar através do ícone e focar no input */
-}
 
 .menu-icon {
   width: 30px; /* Tamanho do ícone */
@@ -87,9 +78,7 @@ div .input-add-city {
   .input-container {
     width: 100%;
   }
-  .search-icon {
-    display: none;
-  }
+
   .menu-icon {
     display: block;
     margin-left: 1rem;
@@ -110,11 +99,6 @@ div .input-add-city {
     padding: 2rem;
   }
 
-  .search-icon {
-    left: 20rem;
-    color: white;
-  }
-
   .input-add-city {
     display: none;
   }
@@ -125,7 +109,7 @@ div .input-add-city {
   }
 }
 
-@media (max-width: 450px) {
+@media (min-width: 0px) and (max-width: 450px) {
   body {
     margin: 0;
     padding: 0;
@@ -139,10 +123,7 @@ div .input-add-city {
   .input-container {
     width: 100%;
   }
-  .search-icon {
-    left: 18rem;
-    color: white;
-  }
+
   .menu-icon {
     display: block;
     margin-left: 1rem;

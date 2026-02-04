@@ -16,15 +16,17 @@ function WeatherDetails({ forecast, city }) {
       <div className="temperature-details">
         <p className="large-font-size">Máx: {forecast.max} ºC</p>
         <p className="large-font-size blue-color">Mín: {forecast.min} ºC</p>
-      <div className="wind-and-rain-details">
-        <p>
-          <CloudRainWind className="rain-icon" /> Chuva:{" "}
-          {forecast.rain_probability}%
-        </p>
-        <p>
-          <Wind className="rain-icon" /> Vento: {forecast.wind_speedy}
-        </p>
-      </div>
+        <div className="wind-and-rain-details">
+          <p>
+            <CloudRainWind className="rain-icon" /> Chuva:{" "}
+            {forecast.rain_probability}%
+          </p>
+        </div>
+        <div className="wind-and-rain-details">
+          <p>
+            <Wind className="rain-icon" /> Vento: {forecast.wind_speedy}
+          </p>
+        </div>
       </div>
     </div>
   );

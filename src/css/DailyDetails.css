@@ -47,6 +47,23 @@
   color: rgb(37, 155, 245);
 }
 
+.wind-and-rain-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.wind-and-rain-details p {
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
 @media (min-width: 769px) and (max-width: 1024px) {
   .weather-details {
     width: 80%;
@@ -123,7 +140,8 @@
   }
 }
 
-@media (max-width: 450px) {
+@media (min-width: 0px) and (max-width: 450px) {
+  
   .weather-details {
     width: 100%;
     height: auto;
