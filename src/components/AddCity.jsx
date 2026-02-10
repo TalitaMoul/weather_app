@@ -1,16 +1,14 @@
 import "../css/AddCity.css";
-import { Search, Menu} from "lucide-react";
+import { useState } from "react";
 
-function AddCity() {
+function AddCity({}) {
+
   return (
     <header>
-      <Menu className="menu-icon"/>
       <div className="input-container">
-        <input
-          className="input-add-city"
-          type="text"
-          placeholder="Busque por uma cidade..."
-        />
+        <button onClick={() => setSelectedCity("Vitória")}>Vitória</button>
+        <button onClick={() => setSelectedCity("Rio de Janeiro")}>Rio de Janeiro</button>
+        <button onClick={() => setSelectedCity("São Paulo")}>São Paulo</button>
       </div>
     </header>
   );

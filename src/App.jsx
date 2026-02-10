@@ -72,9 +72,12 @@ const climate_city_data = {
 
 
 function App() {
+
+  const [selectedCity, setSelectedCity] = useState("Vitória");
+
   return (
     <div className="app-container">
-      <AddCity />
+      <AddCity setSelectedCity={setSelectedCity} />
       <main className="column-flex">
         <div className="info-tempo">
           <h1>PREVISÃO DO TEMPO</h1>
@@ -94,7 +97,7 @@ function App() {
           <h2>{climate_city_data.results.temp} °C</h2>
         </div>
       </main>
-      <DailyDetails city={climate_city_data.results.city} forecast={climate_city_data.results.forecast} />
+      <DailyDetails city={selectedCity} forecast={climate_city_data.results.forecast} />
     </div>
   );
 }
