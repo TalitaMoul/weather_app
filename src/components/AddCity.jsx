@@ -1,7 +1,7 @@
 import "../css/AddCity.css";
 import { useState } from "react";
 
-function AddCity({}) {
+function AddCity({setSelectedCity}) {
 
   return (
     <header>
