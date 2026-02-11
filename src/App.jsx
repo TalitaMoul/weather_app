@@ -1,53 +1,64 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import AddCity from "./components/AddCity";
 import DailyDetails from "./components/DailyDetails";
 
-const climate_city_data = {
-  "Vitória": {
-    results: {
-      temp: 25,
-      description: "Tempo limpo",
-      city: "Vitória, ES",
-      forecast: [
-        { date: "11/01", weekday: "Dom", max: 28, min: 21, condition: "clear_day", rain_probability: 0, wind_speedy: "7.56 km/h", description: "Ensolarado" },
-        { date: "12/01", weekday: "Seg", max: 29, min: 23, condition: "clear_day", rain_probability: 10, wind_speedy: "9.18 km/h", description: "Céu limpo" }
-      ]
-    }
-  },
-  "Rio de Janeiro": {
-    results: {
-      temp: 32,
-      description: "Muito Quente",
-      city: "Rio de Janeiro, RJ",
-      forecast: [
-        { date: "11/01", weekday: "Dom", max: 35, min: 26, condition: "clear_day", rain_probability: 0, wind_speedy: "12 km/h", description: "Sol escaldante" },
-        { date: "12/01", weekday: "Seg", max: 33, min: 25, condition: "cloudly_day", rain_probability: 20, wind_speedy: "15 km/h", description: "Parcialmente nublado" }
-      ]
-    }
-  },
-  "São Paulo": {
-    results: {
-      temp: 20,
-      description: "Garoa fina",
-      city: "São Paulo, SP",
-      forecast: [
-        { date: "11/01", weekday: "Dom", max: 22, min: 18, condition: "rain", rain_probability: 80, wind_speedy: "5 km/h", description: "Chuva leve" },
-        { date: "12/01", weekday: "Seg", max: 21, min: 17, condition: "cloudly_day", rain_probability: 40, wind_speedy: "8 km/h", description: "Nublado" }
-      ]
-    }
-  }
-};
-
-
 function App() {
+  // Iniciamos como null para indicar que ainda não tem dados
+  const [cityData, setCityData] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  const [cityData, setCityData] = useState(climate_city_data["Vitória"]);
+  // Chave da API
+  const API_KEY = "cc11f440";
 
-  const handleCityChange = (nome) => {
-    const newData = climate_city_data[nome];
-    setCityData(newData);
+  const fetchWeather = async (cityName) => {
+    setLoading(true); // Ativa o carregamento da API
+
+    try {
+
+      const encodedCity = encodeURIComponent(cityName);
+
+      const url = `https://api.hgbrasil.com/weather?format=json-cors&key=${API_KEY}&city_name=${encodedCity}`;
+
+      const response = await fetch(url);
+      const data = await response.json();
+
+      setCityData(data);
+    } catch (error) {
+      console.error("Erro ao buscar clima:", error);
+      alert("Erro ao buscar dados da cidade.");
+    } finally {
+      setLoading(false);
+    }
   };
+
+  //  carregar Vitória assim que o App abrir
+  useEffect(() => {
+    fetchWeather("Vitória, ES");
+  }, []);
+
+  // função de troca de cidade para chamar a API
+  const handleCityChange = (nomeDaCidade) => {
+    fetchWeather(nomeDaCidade);
+  };
+
+  // Tela de carregamento
+  if (loading) {
+    return (
+      <div className="app-container">
+        <h2>Carregando previsão...</h2>
+      </div>
+    );
+  }
+
+  // Se não houver dados por algum erro
+  if (!cityData || !cityData.results) {
+    return (
+      <div className="app-container">
+        <h2>Erro ao carregar dados.</h2>
+      </div>
+    );
+  }
 
   return (
     <div className="app-container">
@@ -56,22 +67,26 @@ function App() {
         <div className="info-tempo">
           <h1>PREVISÃO DO TEMPO</h1>
           <p>
-            {cityData.results.city},{" "}
-            {cityData.results.description} -{" "}
+            {cityData.results.city}, {cityData.results.description} -{" "}
             {cityData.results.date}
-            
           </p>
         </div>
         <div className="temperatura">
-          <img
-            className="weather-image"
-            src={`https://assets.hgbrasil.com/weather/icons/conditions/${cityData.results.forecast[0].condition}.svg`}
-            alt="weather image"
-          />
+          {cityData.results.forecast &&
+            cityData.results.forecast.length > 0 && (
+              <img
+                className="weather-image"
+                alt="weather image"
+                src={`https://assets.hgbrasil.com/weather/icons/conditions/${cityData.results.forecast[0].condition}.svg`}
+              />
+            )}
           <h2>{cityData.results.temp} °C</h2>
         </div>
       </main>
-      <DailyDetails city={cityData.results.city} forecast={cityData.results.forecast} />
+      <DailyDetails
+        city={cityData.results.city}
+        forecast={cityData.results.forecast}
+      />
     </div>
   );
 }
