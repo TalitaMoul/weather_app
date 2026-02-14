@@ -8,17 +8,13 @@ function App() {
   const [cityData, setCityData] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // Chave da API
-  const API_KEY = "cc11f440";
-
   const fetchWeather = async (cityName) => {
     setLoading(true); // Ativa o carregamento da API
 
     try {
-
       const encodedCity = encodeURIComponent(cityName);
 
-      const url = `https://api.hgbrasil.com/weather?format=json-cors&key=${API_KEY}&city_name=${encodedCity}`;
+      const url = `/api/weather?city_name=${encodedCity}`;
 
       const response = await fetch(url);
       const data = await response.json();
