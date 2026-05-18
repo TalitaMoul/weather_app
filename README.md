@@ -28,7 +28,7 @@ Aplicação web de previsão do tempo em tempo real, desenvolvida com React.js e
 `npm install`
 
 ## Inicie o servidor de desenvolvimento
-`npm run dev`
+`npm run dev`<br>
 Acesse *http://localhost:5173* no navegador.
 
 ⚠️ ***A aplicação pode exigir uma chave de API configurada no .env. Consulte a documentação da API utilizada para gerar a sua.***
