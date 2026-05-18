@@ -18,16 +18,16 @@ Aplicação web de previsão do tempo em tempo real, desenvolvida com React.js e
 
 
 ## Como rodar localmente
-#### ***bash#*** Clone o repositório
+### Clone o repositório
 `git clone https://github.com/TalitaMoul/weather_app.git`
 
-## Acesse a pasta
+### Acesse a pasta
 `cd weather_app`
 
-## Instale as dependências
+### Instale as dependências
 `npm install`
 
-## Inicie o servidor de desenvolvimento
+### Inicie o servidor de desenvolvimento
 `npm run dev`<br>
 Acesse *http://localhost:5173* no navegador.
 
@@ -38,4 +38,7 @@ Acesse *http://localhost:5173* no navegador.
 Este projeto foi desenvolvido como exercício de consumo de APIs REST no front-end. O escopo foi definido intencionalmente para três cidades, permitindo foco na integração com a API e na renderização dos dados antes de expandir para buscas dinâmicas.
 
 ## Autor
-**Desenvolvido por Talita Moulin**
+**Desenvolvido por Talita Moulin**<br>
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/talitamoul/)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/TalitaMoul)
