@@ -11,10 +11,10 @@ Aplicação web de previsão do tempo em tempo real, desenvolvida com React.js e
 
 ## Tecnologias
 
-- **React.js** — componentização e gerenciamento de estado com hooks
-- **API de clima** — consumo de API REST externa para dados meteorológicos em tempo real
-- **CSS** — estilização responsiva dos componentes
-- **Vite** — bundler para desenvolvimento e build
+- **React.js**: componentização e gerenciamento de estado com hooks
+- **API de clima**: consumo de API REST externa para dados meteorológicos em tempo real
+- **CSS**: estilização responsiva dos componentes
+- **Vite**: bundler para desenvolvimento e build
 
 
 ## Como rodar localmente
