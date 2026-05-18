@@ -4,34 +4,34 @@ Aplicação web de previsão do tempo em tempo real, desenvolvida com React.js e
 
 ## Funcionalidades
 
-🌡️ Exibição de temperatura atual por cidade
-🌥️ Condição climática em tempo real (sol, chuva, nuvens, etc.)
-📍 Consulta disponível para: Rio de Janeiro, São Paulo e Vitória
+- Exibição de temperatura atual por cidade
+- Condição climática em tempo real (sol, chuva, nuvens, etc.)
+- Consulta disponível para: Rio de Janeiro, São Paulo e Vitória
 
 
 ## Tecnologias
 
-React.js — componentização e gerenciamento de estado com hooks
-API de clima — consumo de API REST externa para dados meteorológicos em tempo real
-CSS — estilização responsiva dos componentes
-Vite — bundler para desenvolvimento e build
+- **React.js** — componentização e gerenciamento de estado com hooks
+- **API de clima** — consumo de API REST externa para dados meteorológicos em tempo real
+- **CSS** — estilização responsiva dos componentes
+- **Vite** — bundler para desenvolvimento e build
 
 
 ## Como rodar localmente
-bash# Clone o repositório
-git clone https://github.com/TalitaMoul/weather_app.git
+#### ***bash#*** Clone o repositório
+`git clone https://github.com/TalitaMoul/weather_app.git`
 
 ## Acesse a pasta
-cd weather_app
+`cd weather_app`
 
 ## Instale as dependências
-npm install
+`npm install`
 
 ## Inicie o servidor de desenvolvimento
-npm run dev
-Acesse http://localhost:5173 no navegador.
+`npm run dev`
+Acesse *http://localhost:5173* no navegador.
 
-⚠️ A aplicação pode exigir uma chave de API configurada no .env. Consulte a documentação da API utilizada para gerar a sua.
+⚠️ ***A aplicação pode exigir uma chave de API configurada no .env. Consulte a documentação da API utilizada para gerar a sua.***
 
 
 ## Escopo do projeto
